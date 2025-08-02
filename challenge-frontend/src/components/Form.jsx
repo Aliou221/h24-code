@@ -27,7 +27,7 @@ export default function Form() {
             category: category,
          }
 
-         await axios.post('http://localhost:8000/api/posts', postData);
+         await axios.post('https://h24-code-challenge.free.nf/api/posts', postData);
          setSuccess(true)
 
          setTitle('')
