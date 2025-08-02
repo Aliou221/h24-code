@@ -12,7 +12,7 @@ export default function Statistique() {
    })
    
    useEffect(() => {
-      axios.get('http://127.0.0.1:8000/api/stat')
+      axios.get('https://h24-code-challenge.free.nf/api/stat')
       .then(res => {
          const data = res.data
          setTotal({ 
