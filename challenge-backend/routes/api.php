@@ -13,3 +13,4 @@ Route::get('/stat', [PostController::class, 'getAll']);
 Route::resources([
     'posts' => PostController::class,
 ]);
+
