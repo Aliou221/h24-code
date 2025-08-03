@@ -26,7 +26,7 @@ export default function Home() {
    }
 
    useEffect(() => {
-      axios.get('https://h24-code-challenge.free.nf/api/proxy/posts')
+      axios.get('https://h24-code-challenge.free.nf/api/posts')
       .then(res =>  setCards(res.data))
       .catch(err => console.error('Erreur : ' + err))
    }, [])
