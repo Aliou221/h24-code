@@ -1,35 +1,37 @@
-FROM php:8.2-fpm
+## What this contribution is all about:
 
-RUN apt-get update && apt-get install -y \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    curl \
-    git \
-    libzip-dev \
-    libpng-dev \
-    libonig-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libmcrypt-dev \
-    libssl-dev \
-    libcurl4-openssl-dev \
-    default-mysql-client \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip
+    If you're looking to move from running your Laravel app locally to deploying it in production effortlessly, Railway is an amazing choice. This resource shows you how to containerize your Laravel app using Docker and deploy it to Railway in a few simple steps.
 
-# Installer Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-WORKDIR /var/www
-
-COPY . .
-
-RUN composer install --no-dev --optimize-autoloader
-
-RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
-
-# Laravel port
-EXPOSE 8000
-
-CMD php artisan key:generate && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000
+    🛠️ How to Use
+    Download the provided Dockerfile and place it in the root directory of your Laravel project.
+    
+    Push your application to GitHub.
+    
+    Deploy a MySQL instance via the Railway Dashboard.
+    
+    Deploy your Laravel repository (with the Dockerfile) to a new Railway project.
+    
+    Configure your environment variables in the Railway Dashboard.
+    
+    Here’s a sample .env configuration to get you started — including the database connection details:
+    
+    ```
+    APP_NAME=Laravel
+    APP_ENV=production
+    APP_KEY=base64:UfSOV75PS4pzYOAKvka4utYCv2HeRx0p+cy9s92YNKk=
+    APP_DEBUG=true
+    APP_URL=http://localhost
+    DB_CONNECTION=mysql
+    DB_HOST=xxxxxxxxx.xxxxxx.rlwy.net
+    DB_PORT=xxxxx
+    DB_DATABASE=railway
+    DB_USERNAME=root
+    DB_PASSWORD=xxxxxxxxxxx
+    
+    ```
+    
+    ##### Deploy the application once done
+    
+    
+    ##Video Reference
+    https://youtu.be/xnqV53UqwvI
