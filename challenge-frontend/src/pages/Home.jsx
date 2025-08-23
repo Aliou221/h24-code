@@ -34,7 +34,7 @@ export default function Home() {
    const NoteCode = () => {
       return (
          <div className='mt-5 p-3 shadow-sm flex flex-col items-center justify-center'>
-            <h1 className='text-2xl font-bold'>Aucun code n'est encore disponible !</h1>
+            <h1 className='text-2xl font-bold text-center'>Aucun code n'est encore disponible !</h1>
             <p>Veuillez ajouter votre premier bout de code</p>
             <Link to='/ajouter' className='bg-blue-100 px-3 py-2 rounded-md mt-3 text-sm font-medium shadow-sm border border-transparent hover:border-blue-600 transition-all hover:bg-blue-200'>Ajouter</Link>
          </div>
